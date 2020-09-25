@@ -1,5 +1,6 @@
 body{
-    background: rgba(10, 15, 23, 0.91);
+    
+    /* background: rgba(10, 15, 23, 0.91); */
     font-family: Arial, Helvetica, sans-serif;
 }
 .section-signup{
@@ -14,11 +15,12 @@ h1{
 input{
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.78);
+    background: #C4C4C4;
     margin:20px 100px 0px 100px;
     width: 300px; 
 }
 input[type='button']{
+    background: #C4C4C4;
     width: 200px;
     align-items: center;
     justify-content: center;
@@ -30,7 +32,7 @@ input[type='button']{
     padding-top: 20px;
 }
 .menu{
-    background: none;
+    /* background: ; */
 }
 .dashboard {
     display: grid;
@@ -121,4 +123,68 @@ table{
    background:  rgba(255, 255, 255, 0.78);
     color:black  ;
   }
-  
+  .article-info{
+      margin-top: 50px;
+    color: #000;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+          /* margin-left: 10%; */
+  }
+  .article-info-form{
+      display: flex;
+      flex-flow: column;
+      /* margin: 10px; */
+      align-items: center;
+      
+  }
+textarea{
+    display: flex;
+    flex-flow: column;
+    width: 60%;
+    height: 50%;
+    background: #C4C4C4;
+    margin-left: 100px;
+}
+input[type="name"]{
+    display: flex;
+}
+.update-user{
+    padding-bottom: 100px;
+}
+.view{
+    color: #000;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.author .author-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    align-content: center;
+}
+.article-img{
+    
+}
+.comment{
+    background: #C4C4C4;
+}
+ .comment-field{
+    background-color: #6D6D6D;
+    color:black !important;
+}
+.subscribe{
+    margin: 10px;
+    background: #C4C4C4;
+}
+.subscribe-field{
+    color: white;
+    background: #6D6D6D;
+    
+}
+.view p {
+    display: flex;
+flex-flow: row wrap;
+align-items: center;
+}
