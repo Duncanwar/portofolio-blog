@@ -245,4 +245,13 @@
        margin: 0px 100px;
        padding: 10px;
    }
-   
+
+   /* media queries */
+   @media only screen and (max-width:529px){
+       .sample{
+           flex-direction: column   ;
+       }
+       .samples{
+           flex-direction: column;
+       }
+   }
