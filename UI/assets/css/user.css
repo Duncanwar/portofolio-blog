@@ -1,0 +1,10 @@
+body{
+    background: rgba(10, 15, 23, 0.91);
+}
+footer{
+    background: none;
+ 
+}
+footer p{
+    padding-top: 100px;
+}
