@@ -20,20 +20,48 @@
 
         </ul>
     </nav>
+    <div class="dashboard">
+        <!-- sidebar -->
+<section class="sidebar">
+    <ul class="left">
+        <li class="left-article">
+          <a href='dashboard.html'> Article </a>
+        </li>
+        <li class="left-article">
+            <a href="Reminder.html">Reminder</a>
+         </li>
+         <li class="left-article">
+            <a href="updateUserinfo.html">My Info</a> 
+         </li>
+    <li class="left-article"><a href="users.html">manage Users</a></li>
+    </ul>
+
+</section>
+<section class="main-right">
         <main class="article-info update-user">
             <div class="article-info-form">
                 <h1>Update my Information</h1>
                 <form class="article-info">
+                    <label>Name</label>
                     <input type="text"  name="Name" placeholder="Title"><br>
+                    <label>Profile Picture</label>
                     <input type="file"  name="Email" placeholder="image"><br>
-                    
+                    <label>Skills</label>
+                    <input type="text"  name="skill" placeholder="New Skill">
+                    <br>
+                    <select>
+                        <option>Javascript</option>
+                        <option>Javascript</option>
+                        <option>Javascript</option>
+                    </select>
                     <input type="button" name="Create" value="Update" ><br>
                 </form>
             </div>
         </main>
+        </section>
+    </div>     
         <footer class="layout">
             <p> &copy;Ndanyuzwe Duncan Semugeshi 2020 </p>
          </footer>
-    
 </body>
 </html>

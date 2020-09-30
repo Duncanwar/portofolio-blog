@@ -29,15 +29,11 @@ input[type='button']{
     justify-content: center;
     padding-top: 20px;
 }
-.menu{
-    /* background: ; */
-}
 .dashboard {
     display: grid;
     grid-template-columns: 200px 1fr;
     grid-template-rows: 1fr;
 }
-
 
 .sidebar{
     grid-column: 1/2;
@@ -46,14 +42,12 @@ flex-flow: column wrap;
 background: rgba(10, 15, 23);
 flex: 0 0 10%;
 padding: 0px 0px 200% 0px;
-
 }
 .left{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column ;
     padding: 30px;
     flex: 0 0 10%;
-    background: ;
 }
 .left-article{
     display: flex;
@@ -69,6 +63,11 @@ padding: 0px 0px 200% 0px;
     grid-column: 2/2;
     background: #6D6D6D;
    color: #6D6D6D;
+}
+.main-right h2{
+    text-align: center;
+    color: #C4C4C4;
+    padding:10px;
 }
 .top-nav{
     display: flex;
@@ -104,7 +103,11 @@ table{
     color: black;
     width: 97%;
   }
-  
+.section-table h3{
+    color: #C4C4C4;
+    text-align: center;
+    padding-bottom: 10px;
+}
 #Blog td, #Blog th {
     border: 1px solid #ddd;
     padding: 8px;
@@ -123,18 +126,29 @@ table{
   }
   .article-info{
       margin-top: 50px;
-    color: #000;
+      color: #000;
       display: flex;
       flex-flow: column;
       justify-content: center;
-          /* margin-left: 10%; */
+  }
+  .article-info label{
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      padding-left: 100px;
+  }
+  select{
+       display: flex;
+       width: 100px;
+       flex-flow: column;
+       justify-content: center;
+       align-items: center;
+       margin-left:100px ;
   }
   .article-info-form{
       display: flex;
       flex-flow: column;
-      /* margin: 10px; */
       align-items: center;
-      
   }
 textarea{
     display: flex;
@@ -162,9 +176,6 @@ input[type="name"]{
     height: 50px;
     border-radius: 50px;
     align-content: center;
-}
-.article-img{
-    
 }
 .comment{
     display: flex;
