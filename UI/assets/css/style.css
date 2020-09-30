@@ -10,6 +10,17 @@
    .section-about{
        background: rgba(10, 15, 23, 0.91);
    }
+   a {
+    color: white;
+    text-decoration: none;
+}
+.navs a:hover{
+color: grey;
+}
+h1 span a {
+    font-size: medium;
+    color: aqua;
+}
    h1{
        text-align: center;
        display: block !important;
@@ -256,14 +267,4 @@
            flex-direction: column;
        }
    }
-   a {
-       color: white;
-       text-decoration: none;
-   }
-   .navs a:hover{
-color: grey;
-   }
-   h1 span a {
-       font-size: medium;
-       color: aqua;
-   }
+   
