@@ -1,6 +1,4 @@
 body{
-    
-    /* background: rgba(10, 15, 23, 0.91); */
     font-family: Arial, Helvetica, sans-serif;
 }
 .section-signup{
@@ -31,15 +29,11 @@ input[type='button']{
     justify-content: center;
     padding-top: 20px;
 }
-.menu{
-    /* background: ; */
-}
 .dashboard {
     display: grid;
     grid-template-columns: 200px 1fr;
     grid-template-rows: 1fr;
 }
-
 
 .sidebar{
     grid-column: 1/2;
@@ -48,14 +42,12 @@ flex-flow: column wrap;
 background: rgba(10, 15, 23);
 flex: 0 0 10%;
 padding: 0px 0px 200% 0px;
-
 }
 .left{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column ;
     padding: 30px;
     flex: 0 0 10%;
-    background: ;
 }
 .left-article{
     display: flex;
@@ -71,6 +63,11 @@ padding: 0px 0px 200% 0px;
     grid-column: 2/2;
     background: #6D6D6D;
    color: #6D6D6D;
+}
+.main-right h2{
+    text-align: center;
+    color: #C4C4C4;
+    padding:10px;
 }
 .top-nav{
     display: flex;
@@ -104,9 +101,13 @@ padding: 0px 0px 200% 0px;
 table{
     margin-left: 20px;
     color: black;
-    width: 100%;
+    width: 97%;
   }
-  
+.section-table h3{
+    color: #C4C4C4;
+    text-align: center;
+    padding-bottom: 10px;
+}
 #Blog td, #Blog th {
     border: 1px solid #ddd;
     padding: 8px;
@@ -125,18 +126,29 @@ table{
   }
   .article-info{
       margin-top: 50px;
-    color: #000;
+      color: #000;
       display: flex;
       flex-flow: column;
       justify-content: center;
-          /* margin-left: 10%; */
+  }
+  .article-info label{
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      padding-left: 100px;
+  }
+  select{
+       display: flex;
+       width: 100px;
+       flex-flow: column;
+       justify-content: center;
+       align-items: center;
+       margin-left:100px ;
   }
   .article-info-form{
       display: flex;
       flex-flow: column;
-      /* margin: 10px; */
       align-items: center;
-      
   }
 textarea{
     display: flex;
@@ -157,6 +169,7 @@ input[type="name"]{
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+    justify-content: center;
 }
 .author .author-img{
     width: 50px;
@@ -164,27 +177,92 @@ input[type="name"]{
     border-radius: 50px;
     align-content: center;
 }
-.article-img{
-    
-}
 .comment{
+    display: flex;
+    justify-content: flex-end;
     background: #C4C4C4;
+    padding: 10px;
+    margin: 10px;
 }
  .comment-field{
     background-color: #6D6D6D;
-    color:black !important;
+    display: flex;
+    /* justify-content: flex-end; */
 }
 .subscribe{
     margin: 10px;
-    background: #C4C4C4;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+    background: #395185;
+    border-radius: 20px;
+
 }
 .subscribe-field{
+    color: black;
+    background: #f2f2f2;
+
+}
+.btn-submit {
+    background: rgba(57, 81, 133, 0.40);
     color: white;
-    background: #6D6D6D;
-    
+    font-size: large;
+    width: 30%;
+}
+.subscribe h6{
+    font-size: x-large;
+    color: white;
+    padding-left: 100px;
 }
 .view p {
     display: flex;
 flex-flow: row wrap;
 align-items: center;
+}
+.articles{
+    display: flex;
+    flex-flow: row wrap;
+    color: #000;
+    align-items: center;
+    justify-content: center;
+}
+.articles-one{
+    
+    padding: 20px;
+    display: flex;
+    width: 60%;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+.articles-one small{
+    display: flex;
+    justify-content: center;
+}
+.content{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 60%;
+}
+.content h5{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+}
+.content input[type="submit"]{
+    background: white;
+    border-color: #395185;
+    padding-left: 100px;
+}
+.comments{
+    border: #000;
+    border-width: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    background: #f2f2f2;
+}
+.comments p{
+    padding: 10px;
+    margin: 10px;
 }

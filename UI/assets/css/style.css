@@ -256,3 +256,14 @@
            flex-direction: column;
        }
    }
+   a {
+       color: white;
+       text-decoration: none;
+   }
+   .navs a:hover{
+color: grey;
+   }
+   h1 span a {
+       font-size: medium;
+       color: aqua;
+   }
