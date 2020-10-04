@@ -229,15 +229,15 @@ h1 span a {
        display: flex;
        flex-flow: row wrap;
    }
-   textarea{
-       display: flex;
-       padding: 10px;
-       margin: 10px;
-       padding-bottom: 30px;
-       width: 100%;
-       /* background: rgba(255,255,255,0.78); */
-       color: rgba(109,109,109,1);
-   }
+   #message{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    padding-bottom: 30px;
+    width: 100%;
+    /* background: rgba(255,255,255,0.78); */
+    color: rgba(109,109,109,1);
+}
    input{
        display: flex;
        /* flex: auto; */
@@ -257,7 +257,12 @@ h1 span a {
        margin: 0px 100px;
        padding: 10px;
    }
-
+   input[type=submit]{
+    background: rgba(255,255,255,0.78);
+    color: rgba(109,109,109,1);
+   margin: 0px 100px;
+   padding: 10px;
+}
    /* media queries */
    @media only screen and (max-width:529px){
        .sample{
@@ -266,5 +271,14 @@ h1 span a {
        .samples{
            flex-direction: column;
        }
+   }
+
+   .alert{
+       text-align: center;
+       padding: 10px;
+       background: #79c879;
+       margin-top: 10px;
+       width: 100%;
+       display: none;
    }
    
