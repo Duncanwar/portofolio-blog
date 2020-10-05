@@ -1,7 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-   }
+    *{
+        margin: 0;
+        padding: 0;
+    }
    body{
      color:white;
      font-family: Arial;
@@ -11,16 +11,16 @@
        background: rgba(10, 15, 23, 0.91);
    }
    a {
-    color: white;
-    text-decoration: none;
-}
-.navs a:hover{
-color: grey;
-}
-h1 span a {
-    font-size: medium;
-    color: aqua;
-}
+        color: white;
+        text-decoration: none;
+    }
+    .navs a:hover{
+       color: grey;
+    }
+    h1 span a {
+        font-size: medium;
+        color: aqua;
+    }
    h1{
        text-align: center;
        display: block !important;
@@ -33,7 +33,6 @@ h1 span a {
    img{
       max-width: 100%;
    }
-   
    .menu{
        display: flex;
        flex-flow: row wrap;
@@ -46,7 +45,6 @@ h1 span a {
        padding-right: 10px;
        flex: 0 0 10%;
        font-size: 16px;
-       
    }
    .logo{
        display: flex;
@@ -63,7 +61,6 @@ h1 span a {
        grid-template-columns: 1fr 3fr;
        grid-template-rows: 341px 341px 124px;
        grid-gap: 20px 30px;
-       
        font-size: 30px;
    }
    .presentation{
@@ -73,11 +70,9 @@ h1 span a {
        padding-right: 0px;
    }
    .describe{
-      
        grid-row: 2/3;
        grid-column: 1/2;
        padding-right: 0px;
-   
    }
    .profile{
        grid-row: 1/2;
@@ -85,7 +80,7 @@ h1 span a {
        padding-left: 122px;
    }
    .work{
-       background-image: url('../img/testalize-me-SVmaaACzcJ8-unsplash.jpg');
+      background-image: url('../img/testalize-me-SVmaaACzcJ8-unsplash.jpg');
       grid-row: 3/3;
       grid-column: 1/3;
       padding: 0px;
@@ -95,48 +90,48 @@ h1 span a {
       justify-content: center;
    }
    .text{
-       display: flex;
-   justify-content: center;
-   align-items: center;
-   background: linear-gradient(180deg, rgba(255, 255, 255, 0.69) 0%, rgba(255, 255, 255, 0.69) 100%);
-   margin-top: 62px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.69) 0%, rgba(255, 255, 255, 0.69) 100%);
+        margin-top: 62px;
    }
    .about{
-       display: grid;
-   grid-template-columns :1fr 1fr ;
-   grid-template-rows: 1fr;
-   padding: 70px 10px 20px 10px ;
+        display: grid;
+        grid-template-columns :1fr 1fr ;
+        grid-template-rows: 1fr;
+        padding: 70px 10px 20px 10px ;
    
    }
    .info{
        grid-column: 1/2;
-    font-size: 20px;
+        font-size: 20px;
    }
    .skills{
-       grid-column: 2/2;
-    display: flex;
-    padding-left: 40px;
-    flex-flow: column wrap;
+        grid-column: 2/2;
+        display: flex;
+        padding-left: 40px;
+        flex-flow: column wrap;
    }
    .skill{
-   display: flex;
-   flex-flow: column ;
-   padding-top: 10px;
-   font-size: 20px;
+        display: flex;
+        flex-flow: column ;
+        padding-top: 10px;
+        font-size: 20px;
    }
    .section-services{
        display: flex;
        flex-flow: row wrap;
        background-image: url('../img/xps-2L-0vnCnzcU-unsplash.jpg');
-      justify-content: center;
-      margin: 0px;
+       justify-content: center;
+       margin: 0px;
    }
    .serive-box{
-   background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
-   linear-gradient(180deg, #898477 0%, rgba(0, 41, 255, 0.2) 100%);
-   padding: 100px;
-   margin: 20px;
-   align-items: center;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+        linear-gradient(180deg, #898477 0%, rgba(0, 41, 255, 0.2) 100%);
+        padding: 100px;
+        margin: 20px;
+        align-items: center;
    }
    .section-work{
        background: rgba(10, 15, 23, 0.91);
@@ -147,10 +142,10 @@ h1 span a {
        justify-content: center;
    }
    .samples{
-   display: flex;
-   align-items: center;
-   flex: 0 0 30%;
-   margin:  20px;
+        display: flex;
+        align-items: center;
+        flex: 0 0 30%;
+        margin:  20px;
    }
    #text{
        color: #000;
@@ -167,7 +162,6 @@ h1 span a {
        text-align: center;
        padding: 20px;
    }
-   
    .contact-address{
        display: grid;
        grid-template-rows: 100px 100px 100px;
@@ -181,7 +175,6 @@ h1 span a {
        display: flex;
        color: #000;
        flex-flow: row ;
-       
    }
    .address-text{
        display: flex;
@@ -193,7 +186,6 @@ h1 span a {
        padding: 10px; 
        justify-content: flex-end;
    }
-   
    .contract-social{
        display: flex;
        flex-flow: column ;
@@ -228,24 +220,22 @@ h1 span a {
        display: flex;
        flex-flow: row wrap;
    }
-   #message{
-    display: flex;
-    padding: 10px;
-    margin: 10px;
-    padding-bottom: 30px;
-    color: rgba(109,109,109,1);
-    flex-basis: 275px;
-}
+   textarea{
+       display: flex;
+       padding: 10px;
+       margin: 10px;
+       padding-bottom: 30px;
+       width: 100%;
+       color: rgba(109,109,109,1);
+   }
    input{
        display: flex;
-       
        width: 100%;
        padding: 10px;
        padding-right: 30px;
        margin: 10px;
        align-items: center;
        border-width: 1px;
-   
    }
    input[type=button]{
         background: rgba(255,255,255,0.78);
@@ -253,12 +243,6 @@ h1 span a {
        margin: 0px 100px;
        padding: 10px;
    }
-   input[type=submit]{
-    background: rgba(255,255,255,0.78);
-    color: rgba(109,109,109,1);
-   margin: 0px 100px;
-   padding: 10px;
-}
    /* media queries */
    @media only screen and (max-width:529px){
        .sample{
@@ -268,14 +252,4 @@ h1 span a {
            flex-direction: column;
        }
    }
-   .alert{
-       text-align: center;
-       padding: 10px;
-       background: #79c879;
-       margin-top: 10px;
-       width: 100%;
-       display: none;
-   }
-   grammarly-extension {
-       display: none;
-   }
+   
