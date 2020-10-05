@@ -195,14 +195,15 @@
 <section class="layout  section-contact">
     <h1 id='text'>CONNECT WITH ME</h1>
     <p id='text'>Have something in mind to say don’t hesitate to ask me</p>
+    <div class="alert"> alert</div>
     <div class="grid-3" >  
-<div class=" contact-form">
-    <form>
-        <input type="text"  name="Name" placeholder="Name"><br>
-        <input type="text"  name="Email" placeholder="Email"><br>
+<div  class="contact-form">
+    <form id='Contact-Form'>
+        <input type="text" id="name" name="Name" placeholder="Name" required><br>
+        <input type="text" id="email" name="Email" placeholder="Email" required><br>
         
-        <textarea type="text"  name="Message" placeholder="Message"></textarea><br>
-        <input type="button" name="Send Message" value="Send Message" ><br>
+        <textarea id="message"  name="Message" placeholder="Message" required></textarea><br>
+        <input type="submit" name="Send Message" value="Send Message" ><br>
     </form>
 </div>
 <div class="contact-address">
@@ -242,5 +243,8 @@
    <p> &copy;Ndanyuzwe Duncan Semugeshi 2020 </p>
 </footer>
 </div>
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-database.js"></script>
+<script src="./assets/js/queries.js"></script>
     </body>
 </html>

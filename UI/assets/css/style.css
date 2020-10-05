@@ -185,7 +185,6 @@ h1 span a {
    }
    .address-text{
        display: flex;
-       /* justify-content: center; */
        align-items: center;
        word-spacing: 10px;
    }
@@ -229,26 +228,23 @@ h1 span a {
        display: flex;
        flex-flow: row wrap;
    }
-   textarea{
-       display: flex;
-       padding: 10px;
-       margin: 10px;
-       padding-bottom: 30px;
-       width: 100%;
-       /* background: rgba(255,255,255,0.78); */
-       color: rgba(109,109,109,1);
-   }
+   #message{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    padding-bottom: 30px;
+    color: rgba(109,109,109,1);
+    flex-basis: 275px;
+}
    input{
        display: flex;
-       /* flex: auto; */
+       
        width: 100%;
        padding: 10px;
        padding-right: 30px;
        margin: 10px;
        align-items: center;
-       /* background: rgba(255,255,255); */
        border-width: 1px;
-       /* color: rgba(109,109,109,1); */
    
    }
    input[type=button]{
@@ -257,7 +253,12 @@ h1 span a {
        margin: 0px 100px;
        padding: 10px;
    }
-
+   input[type=submit]{
+    background: rgba(255,255,255,0.78);
+    color: rgba(109,109,109,1);
+   margin: 0px 100px;
+   padding: 10px;
+}
    /* media queries */
    @media only screen and (max-width:529px){
        .sample{
@@ -267,4 +268,14 @@ h1 span a {
            flex-direction: column;
        }
    }
-   
+   .alert{
+       text-align: center;
+       padding: 10px;
+       background: #79c879;
+       margin-top: 10px;
+       width: 100%;
+       display: none;
+   }
+   grammarly-extension {
+       display: none;
+   }
