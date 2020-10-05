@@ -185,7 +185,6 @@ h1 span a {
    }
    .address-text{
        display: flex;
-       /* justify-content: center; */
        align-items: center;
        word-spacing: 10px;
    }
@@ -234,21 +233,18 @@ h1 span a {
     padding: 10px;
     margin: 10px;
     padding-bottom: 30px;
-    width: 100%;
-    /* background: rgba(255,255,255,0.78); */
     color: rgba(109,109,109,1);
+    flex-basis: 275px;
 }
    input{
        display: flex;
-       /* flex: auto; */
+       
        width: 100%;
        padding: 10px;
        padding-right: 30px;
        margin: 10px;
        align-items: center;
-       /* background: rgba(255,255,255); */
        border-width: 1px;
-       /* color: rgba(109,109,109,1); */
    
    }
    input[type=button]{
@@ -272,7 +268,6 @@ h1 span a {
            flex-direction: column;
        }
    }
-
    .alert{
        text-align: center;
        padding: 10px;
@@ -281,4 +276,6 @@ h1 span a {
        width: 100%;
        display: none;
    }
-   
+   grammarly-extension {
+       display: none;
+   }

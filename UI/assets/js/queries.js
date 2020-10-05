@@ -11,12 +11,41 @@ var firebaseConfig = {
   };
   firebase.initializeApp(firebaseConfig);
 
+  
   //Reference queries collection
 const queryRef = firebase.database().ref('queries')
+const queryTable = document.getElementsByClassName('tableQueries')
+// Fetch data from firebase
+const displayQueries = (data,keys) => {
+  let tab;
+for (let t of keys){
+  console.log(t)
+  tab += `<tr>
+  <td>${t}</td>
+  </tr>
+  `;
+}
 
-const saveQuery = (name,email,message) => {
-    const newQuery = queryRef.push();
-   newQuery.set({
+
+//queryTable.innerHTML= tab
+document.getElementById('Blog').innerHTML = tab;
+console.log(tab)
+}
+
+document.addEventListener("DOMContentLoaded", async event => {
+
+  const db = await firebase.database().ref();
+  const myquery = await db.child('queries');
+ await myquery.on("child_added", async snap => {
+   let user = await snap.val();
+   const keys =  Object.keys(user);
+  displayQueries(user,keys) 
+  })
+})
+
+const saveQuery = async(name,email,message) => {
+    const newQuery = await queryRef.push();
+   await newQuery.set({
       name: name,
       email: email,
       message: message  
@@ -25,25 +54,29 @@ const saveQuery = (name,email,message) => {
 
 const contactForm = document.getElementById('Contact-Form');
 
-const getInputValue =  name =>  document.getElementById(name).value; 
+const getInputValue =  name => document.getElementById(name).value; 
 
-const submitForm = (e) => {
-   // let alerts = document.querySelector('.alert');
+const submitForm = async (e) => {
+   let alerts = document.querySelector('.alert');
     e.preventDefault();
-    // Get values
+    // Get values from the form
 const name = getInputValue('name');
 const email = getInputValue('email');
 const message = getInputValue('message');
 
-// save query
- saveQuery(name,email,message);
+// save query in Firebase
+ await saveQuery(name,email,message);
 
 // show alert
-
+alerts.style.display = 'block';
+alerts.textContent = 'SUCCESS';
+setTimeout(()=> 
+alerts.style.display='none'
+,3000)
 
 // clear form
 contactForm.reset();
 }
 
-contactForm.addEventListener('submit',submitForm);
+ contactForm.addEventListener('submit',submitForm);
 
