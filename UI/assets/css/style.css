@@ -252,4 +252,9 @@
            flex-direction: column;
        }
    }
-   
+    grammarly-extension {
+        display: none;
+    }
+   .alert{
+       display: none;
+   }
