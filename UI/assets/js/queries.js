@@ -60,6 +60,3 @@ const submitForm = async (e) => {
 }
 displayQueries()
 contactForm.addEventListener('submit',submitForm);
-
-
- 
