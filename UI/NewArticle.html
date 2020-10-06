@@ -42,12 +42,13 @@ Article
 <main class="article-info">
     <div class="article-info-form">
         <h1>Create New Article</h1>
-        <form class="article-info">
-            <input type="text"  name="Name" placeholder="Title"><br>
-            <input type="file"  name="Email" placeholder="image"><br>
+        <form class="article-info" id="articleForm">
+            <div class="alert"></div>
+            <input type="text" id="articleTitle" name="title" placeholder="Title"><br>
+            <input type="file" id='articleImg'  name="image" placeholder="image"><br>
             
-            <textarea type="text" name="Message" placeholder="Article content"></textarea><br>
-            <input type="button" name="Create" value="Create" ><br>
+            <textarea type="text" id='articleContent' name="Message" placeholder="Article content"></textarea><br>
+            <input type="submit" name="Create" value="Create" ><br>
         </form>
     </div>
 </main>
@@ -57,6 +58,9 @@ Article
         <footer class="layout">
             <p> &copy;Ndanyuzwe Duncan Semugeshi 2020 </p>
          </footer>
-    
+         <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-database.js"></script>
+         <script src="./assets/js/config.js"></script>
+         <script src="./assets/js/articles.js"></script>
 </body>
 </html>
