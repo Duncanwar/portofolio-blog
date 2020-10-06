@@ -37,11 +37,11 @@ input[type='button']{
 
 .sidebar{
     grid-column: 1/2;
-display: flex;
-flex-flow: column wrap;
-background: rgba(10, 15, 23);
-flex: 0 0 10%;
-padding: 0px 0px 200% 0px;
+    display: flex;
+    flex-flow: column wrap;
+    background: rgba(10, 15, 23);
+    flex: 0 0 10%;
+    padding: 0px 0px 200% 0px;
 }
 .left{
     display: flex;
@@ -51,7 +51,6 @@ padding: 0px 0px 200% 0px;
 }
 .left-article{
     display: flex;
-    /* width: 100px; */
     flex-flow: column wrap;
     flex: 0 2 30%;
     padding: 10px;
@@ -99,7 +98,7 @@ padding: 0px 0px 200% 0px;
     background: rgba(255, 255, 255, 0.78);
 }
 table{
-    margin-left: 20px;
+    margin-left: 0px;
     color: black;
     width: 97%;
   }
@@ -108,36 +107,36 @@ table{
     text-align: center;
     padding-bottom: 10px;
 }
-#Blog td, #Blog th {
+#blog td, #blog th {
     border: 1px solid #ddd;
     padding: 8px;
   }
   
-  #Blog tr:nth-child(even){background-color: #f2f2f2;}
+#blog tr:nth-child(even){background-color: #f2f2f2;}
   
-  #Blog tr:hover {background-color: #ddd;}
+#blog tr:hover {background-color: #ddd;}
   
-  #Blog th {
+#blog th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-   background:  rgba(255, 255, 255, 0.78);
+    background:  rgba(255, 255, 255, 0.78);
     color:black  ;
   }
-  .article-info{
-      margin-top: 50px;
-      color: #000;
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
+.article-info{
+    margin-top: 50px;
+    color: #000;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
   }
-  .article-info label{
+.article-info label{
       display: flex;
       flex-flow: column;
       justify-content: center;
       padding-left: 100px;
   }
-  select{
+select{
        display: flex;
        width: 100px;
        flex-flow: column;
@@ -145,10 +144,10 @@ table{
        align-items: center;
        margin-left:100px ;
   }
-  .article-info-form{
-      display: flex;
-      flex-flow: column;
-      align-items: center;
+.article-info-form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
   }
 textarea{
     display: flex;
@@ -187,7 +186,6 @@ input[type="name"]{
  .comment-field{
     background-color: #6D6D6D;
     display: flex;
-    /* justify-content: flex-end; */
 }
 .subscribe{
     margin: 10px;
@@ -195,7 +193,6 @@ input[type="name"]{
     box-shadow: 5px 10px #888888;
     background: #395185;
     border-radius: 20px;
-
 }
 .subscribe-field{
     color: black;
@@ -215,8 +212,8 @@ input[type="name"]{
 }
 .view p {
     display: flex;
-flex-flow: row wrap;
-align-items: center;
+    flex-flow: row wrap;
+    align-items: center;
 }
 .articles{
     display: flex;
@@ -226,7 +223,6 @@ align-items: center;
     justify-content: center;
 }
 .articles-one{
-    
     padding: 20px;
     display: flex;
     width: 60%;
