@@ -58,7 +58,8 @@ const submitForm = async (e) => {
   // clear form
   contactForm.reset();
 }
-contactForm.addEventListener('submit',submitForm);
 displayQueries()
+contactForm.addEventListener('submit',submitForm);
+
 
  
