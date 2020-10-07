@@ -46,39 +46,32 @@
 <section class="section-table">
 <h3>Article Table</h3>
 
-<table id="Blog">
-    <tr>
-      <th>Id</th>
-      <th>Title</th>
-      <th>Date Created</th>
-      <th>Manipulate</th>
-    </tr>
-    <tr>
-      <td>ed234sfff345</td>
-      <td>Kick off grid systems</td>
-      <td>20-09-19</td>
-      <td>
-          <button class ='btn-update'>View</button>
-          <button class='btn-update'>Update</button>
-          <button class="btn-delete">Delete</button>
-      </td>
-    </tr>
-    <tr>
-        <td>ed234sfff345</td>
-        <td>Kick off grid systems</td>
-        <td>20-09-19</td>
-        <td>
-            <button class ='btn-update'>View</button>
-            <button class='btn-update'>Update</button>
-            <button class="btn-delete">Delete</button>
-        </td>
-    </tr>
-    
+<table id="blog">
+    <thead>
+        <tr>
+          <th>Title</th>
+          <th>Presenter</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- This is empty for now, but it will be filled out by an event handler in application.js with the most recent recommendation data from Firebase. -->
+          <td id="title"></td>
+          <td id="date"></td>
+          <td id="manipulate"></td>
+        </tr>
+      </tbody>
   </table>
   
 </section>
 
 </section>
 </div>
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-database.js"></script>
+<script src="./assets/js/config.js"></script>
+<script src="./assets/js/articles.js"></script>
+
 </body>
 </html>

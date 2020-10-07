@@ -2,6 +2,11 @@
 const articleForm = document.getElementById('articleForm');
 const articleRef = firebase.database().ref('article');
 const articleView = document.getElementById('articleOne');
+const articleTable = document.getElementById('blog');
+let title = document.getElementById('title');
+let date = document.getElementById('date');
+let manipulate = document.getElementById('manipulate');
+
 //function to save article query
 const saveArticle = async(titleName,image,content) => {
     const newArticle = await articleRef.push();
@@ -53,5 +58,41 @@ const submitForm = async(e) => {
     // clear form
     articleForm.reset();
 }
+
+const displayArticleInTableForm = () => {
+	articleRef.on("child_added", snap => {  
+			let key = snap.key,
+                value = snap.val(),
+                row = document.( key ),
+               $td = document.createElement('td'),
+               $tr = document.createElement('tr');
+               console.log(row)
+			// edit icon
+			let editIconUI = document.createElement('button');
+			editIconUI.class = "btn-edit";
+			editIconUI.innerHTML = " ✎";
+			editIconUI.setAttribute("userid", key);
+			// editIconUI.addEventListener("click", editButtonClicked)
+
+			// delete icon
+			let deleteIconUI = document.createElement("button");
+			deleteIconUI.class = "btn-delete";
+			deleteIconUI.innerHTML = " ☓";
+            deleteIconUI.setAttribute("userid", key);
+            // manipulate=
+			// deleteIconUI.addEventListener("click", deleteButtonClicked)
+			console.log(value,key)
+            $tr.innerHTML = value.title;
+            $tr.innerHTML = value.timeStamp;
+			$tr.append(editIconUI);
+			$tr.append(deleteIconUI);
+
+			$tr.setAttribute("user-key", key);
+			// $li.addEventListener("click", userClicked)
+			// articleTable.append($tr);
+// })
+})
+}
+displayArticleInTableForm()
 displayArticle()
 articleForm.addEventListener('submit',submitForm)
