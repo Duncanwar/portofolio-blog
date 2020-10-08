@@ -11,7 +11,7 @@ tab +=`<th>Name</th>
   <th>Email</th>
   `;
 
-const data = await fetch('https://fir-test-83ee9.firebaseio.com/queries.json')
+const data = await fetch('https://fir-test-83ee9.firebaseio.com/article.json')
   const result = await data.json();
   const key = Object.keys(result) 
   for (let d of key){
