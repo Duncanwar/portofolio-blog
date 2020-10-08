@@ -60,13 +60,16 @@ const submitForm = async(e) => {
 }
 
 const displayArticleInTableForm = () => {
-	articleRef.on("child_added", snap => {  
-			let key = snap.key,
-                value = snap.val(),
-                row = document.( key ),
+	articleRef.on("child_added", snap => { 
+        let datas={};
+        let data = fetch('https://fir-test-83ee9.firebaseio.com/article.json/')
+        .then (result => result.json()).then(res => datas = res)
+            let key = snap.key,
+                value = snap.val();
+                row += key
                $td = document.createElement('td'),
                $tr = document.createElement('tr');
-               console.log(row)
+            console.log(datas.json())
 			// edit icon
 			let editIconUI = document.createElement('button');
 			editIconUI.class = "btn-edit";
@@ -93,6 +96,21 @@ const displayArticleInTableForm = () => {
 // })
 })
 }
+// location
+
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+
+
+function showPosition(position) {
+    const lng = position.coords.longitude;
+    const lat = position.coords.latitude;
+  
+    console.log(`longitude: ${ lng } | latitude: ${ lat }`);
+}
+
 displayArticleInTableForm()
 displayArticle()
 articleForm.addEventListener('submit',submitForm)
