@@ -11,10 +11,12 @@ tab +=`<th>Name</th>
   <th>Email</th>
   `;
 
-const data = await fetch('https://fir-test-83ee9.firebaseio.com/article.json')
+const data = await fetch('https://fir-test-83ee9.firebaseio.com/queries.json')
   const result = await data.json();
   const key = Object.keys(result) 
+  console.log(result)
   for (let d of key){
+    console.log(result[d].name)
     tab +=`
     <tr>
     <td>${result[d].name}</td>
