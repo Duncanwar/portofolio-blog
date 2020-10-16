@@ -2,9 +2,13 @@ body{
     background: rgba(10, 15, 23, 0.91);
 }
 footer{
+    display: grid;
     background: none;
- 
+    grid-template-rows: 1fr;
 }
 footer p{
     padding-top: 100px;
+    margin-top: 100px;
+    grid-row: 1;
+    color: green;
 }

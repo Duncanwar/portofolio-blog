@@ -59,42 +59,27 @@ const submitForm = async(e) => {
     articleForm.reset();
 }
 
-const displayArticleInTableForm = () => {
-	articleRef.on("child_added", snap => { 
-        let datas={};
-        let data = fetch('https://fir-test-83ee9.firebaseio.com/article.json/')
-        .then (result => result.json()).then(res => datas = res)
-            let key = snap.key,
-                value = snap.val();
-                row += key
-               $td = document.createElement('td'),
-               $tr = document.createElement('tr');
-            console.log(datas.json())
-			// edit icon
-			let editIconUI = document.createElement('button');
-			editIconUI.class = "btn-edit";
-			editIconUI.innerHTML = " ✎";
-			editIconUI.setAttribute("userid", key);
-			// editIconUI.addEventListener("click", editButtonClicked)
-
-			// delete icon
-			let deleteIconUI = document.createElement("button");
-			deleteIconUI.class = "btn-delete";
-			deleteIconUI.innerHTML = " ☓";
-            deleteIconUI.setAttribute("userid", key);
-            // manipulate=
-			// deleteIconUI.addEventListener("click", deleteButtonClicked)
-			console.log(value,key)
-            $tr.innerHTML = value.title;
-            $tr.innerHTML = value.timeStamp;
-			$tr.append(editIconUI);
-			$tr.append(deleteIconUI);
-
-			$tr.setAttribute("user-key", key);
-			// $li.addEventListener("click", userClicked)
-			// articleTable.append($tr);
-// })
-})
+const displayArticleInTableForm = async() => {
+    let tab=`
+    <tr>
+    <th>Title</th>
+    <th>Time</th>
+    </tr>
+    `;
+const data = await fetch('https://fir-test-83ee9.firebaseio.com/article.json');
+const result = await data.json();
+const key = Object.keys(result) 
+console.log(data)
+for (let d of key){
+    tab +=`
+    <tr>
+    <td>${result[d].title}</td>
+    <td>${result[d].timeStamp}</td>
+    </tr>
+   
+  `
+}
+articleTable.innerHTML = tab;
 }
 // location
 
