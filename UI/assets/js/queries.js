@@ -1,5 +1,4 @@
 // Declarations
-const queryRef = firebase.database().ref('queries')
 const queryTable = document.getElementById('blog')
 const contactForm = document.getElementById('submitForm');
 
@@ -10,32 +9,39 @@ tab +=`<th>Name</th>
   <th>message</th>
   <th>Email</th>
   `;
-
-const data = await fetch('https://fir-test-83ee9.firebaseio.com/queries.json')
+const token = localStorage.getItem('token')
+console.log(token)
+const data = await fetch('http://localhost:3000/api/v1/queries',{
+  headers:{
+    'Content-Type': 'application/json',
+    // "Authorization": `Bearer ${token}`
+  }
+})
   const result = await data.json();
+
   const key = Object.keys(result) 
-  console.log(result)
-  for (let d of key){
-    console.log(result[d].name)
+  console.log(result.data)
+  result.data.map( d=>{
     tab +=`
     <tr>
-    <td>${result[d].name}</td>
-    <td>${result[d].message}</td>
-    <td>${result[d].email}</td>
+    <td>${d.name}</td>
+    <td>${d.message}</td>
+    <td>${d.email}</td>
     </tr>
     `
-}
+})
   queryTable.innerHTML = tab;
 }
 
 // function for saving data in the firebase databse
 const saveQuery = async(name,email,message) => {
-  const newQuery = await queryRef.push();
-  await newQuery.set({
-      name: name,
-      email: email,
-      message: message  
-    });
+  const formData = await fetch('http://localhost:3000/api/v1/queries',{
+    method:"post",
+    headers:{
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({name,message,email})
+  });
 }
 
 // function to get id of the input fields
@@ -60,5 +66,10 @@ const submitForm = async (e) => {
   // clear form
   contactForm.reset();
 }
-displayQueries()
-contactForm.addEventListener('submit',submitForm);
+
+if(contactForm){
+  contactForm.addEventListener('submit',submitForm)
+}
+else{
+  displayQueries()
+}
