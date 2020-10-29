@@ -1,6 +1,10 @@
 // create article 
+import dotenv from 'dotenv'
+
+dotenv.config();
+const url = process.env.url;
+
 const articleForm = document.getElementById('articleForm');
-const articleRef = firebase.database().ref('article');
 const articleView = document.getElementById('articleOne');
 const articleTable = document.getElementById('blog');
 let title = document.getElementById('title');
@@ -9,7 +13,7 @@ let manipulate = document.getElementById('manipulate');
 
 //function to save article query
 const saveArticle = async(titleName,image,content) => {
-    const newArticle = await articleRef.push();
+    const newArticle = await fetch(`/articles`);
     //const time = ;
     await newArticle.set({
         title:titleName,
@@ -25,10 +29,10 @@ const getInputValue = id => document.getElementById(id).value;
 // display articles
 const displayArticle = async() => {
 let tab='';
-const data = await fetch('https://fir-test-83ee9.firebaseio.com/article.json');
+const data = await fetch(`${url}articles`);
 const result = await data.json();
 const key = Object.keys(result) 
-console.log(data)
+console.log(result)
 for (let d of key){
     tab +=`
     <h1>${result[d].title}</h1>
