@@ -1,8 +1,6 @@
 // create article 
-import dotenv from 'dotenv'
 
-dotenv.config();
-const url = process.env.url;
+const url= 'http://localhost:3000/api/v1/'
 
 const articleForm = document.getElementById('articleForm');
 const articleView = document.getElementById('articleOne');
@@ -10,17 +8,21 @@ const articleTable = document.getElementById('blog');
 let title = document.getElementById('title');
 let date = document.getElementById('date');
 let manipulate = document.getElementById('manipulate');
+const token = localStorage.getItem('token');
 
 //function to save article query
-const saveArticle = async(titleName,image,content) => {
-    const newArticle = await fetch(`/articles`);
-    //const time = ;
-    await newArticle.set({
-        title:titleName,
-        image:image,
-        content: content,
-        timeStamp: new Date().toDateString()
-    })
+const saveArticle = async(Title,image,content) => {
+    const newArticle = await fetch(`${url}articles`,{
+        method:'Post',
+        headers:{
+            'Content-Type':'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({Title,image,content})
+    });
+
+    const article = await newArticle.json()
+    console.log(article)
 }
 
 // get input fields value
@@ -31,14 +33,12 @@ const displayArticle = async() => {
 let tab='';
 const data = await fetch(`${url}articles`);
 const result = await data.json();
-const key = Object.keys(result) 
-console.log(result)
-for (let d of key){
+result.data.map( d=>{
     tab +=`
-    <h1>${result[d].title}</h1>
-    <small>${result[d].timeStamp}</small>
+    <h1>${d.Title}</h1>
+    <small>${new Date(d.createdAt).toDateString() }</small>
     `
-}
+})
 articleView.innerHTML = tab;
 
 }
@@ -70,19 +70,17 @@ const displayArticleInTableForm = async() => {
     <th>Time</th>
     </tr>
     `;
-const data = await fetch('https://fir-test-83ee9.firebaseio.com/article.json');
+const data = await fetch(`${url}/articles`);
 const result = await data.json();
-const key = Object.keys(result) 
-console.log(data)
-for (let d of key){
+result.data.map(d => {
     tab +=`
     <tr>
-    <td>${result[d].title}</td>
-    <td>${result[d].timeStamp}</td>
+    <td>${d.Title}</td>
+    <td>${d.createdAt}</td>
     </tr>
    
   `
-}
+})
 articleTable.innerHTML = tab;
 }
 // location
@@ -100,6 +98,12 @@ function showPosition(position) {
     console.log(`longitude: ${ lng } | latitude: ${ lat }`);
 }
 
-displayArticleInTableForm()
-displayArticle()
-articleForm.addEventListener('submit',submitForm)
+if(articleForm){
+    articleForm.addEventListener('submit',submitForm)
+}
+else if(articleTable){
+    displayArticleInTableForm()
+}
+else{
+    displayArticle()
+}

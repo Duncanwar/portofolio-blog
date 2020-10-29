@@ -10,17 +10,13 @@ tab +=`<th>Name</th>
   <th>Email</th>
   `;
 const token = localStorage.getItem('token')
-console.log(token)
 const data = await fetch('http://localhost:3000/api/v1/queries',{
   headers:{
     'Content-Type': 'application/json',
-    // "Authorization": `Bearer ${token}`
+    "Authorization": `Bearer ${token}`
   }
 })
   const result = await data.json();
-
-  const key = Object.keys(result) 
-  console.log(result.data)
   result.data.map( d=>{
     tab +=`
     <tr>
