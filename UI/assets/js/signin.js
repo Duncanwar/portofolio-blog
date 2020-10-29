@@ -5,7 +5,7 @@ const authsignin = async (e) => {
     e.preventDefault();
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
-    const postData = await fetch("http://localhost:3000/api/v1/login",{
+    const postData = await fetch("https://blog-andela.herokuapp.com/api/v1/login",{
         method:"post",
         headers:{
           'Content-Type': 'application/json'
@@ -14,14 +14,15 @@ const authsignin = async (e) => {
       })
     const result = await postData.json();
     const tok = result.token;
-    const queries = await fetch("http://localhost:3000/api/v1/queries",{
-        headers:{
-            'Authorization': `Bearer ${tok}`
-        }
-    })
+    const role = result.data.role
     localStorage.setItem('token', tok)
-    const query = await queries.json()
-    console.log(result, query)
+    localStorage.setItem('role',role)
+    if(role === 'admin'){
+     return window.location.replace('http://127.0.0.1:5500/UI/dashboard.html')
+    }
+    else{
+      return window.location.replace('http://127.0.0.1:5500/UI/articles.html')
+    }
 }
 
 formsignin.addEventListener('submit', authsignin)

@@ -262,3 +262,6 @@ input[type="name"]{
     padding: 10px;
     margin: 10px;
 }
+.logout{
+    display: none;
+}

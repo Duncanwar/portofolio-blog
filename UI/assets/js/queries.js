@@ -10,17 +10,13 @@ tab +=`<th>Name</th>
   <th>Email</th>
   `;
 const token = localStorage.getItem('token')
-console.log(token)
-const data = await fetch('http://localhost:3000/api/v1/queries',{
+const data = await fetch('https://blog-andela.herokuapp.com/api/v1/queries',{
   headers:{
     'Content-Type': 'application/json',
-    // "Authorization": `Bearer ${token}`
+    "Authorization": `Bearer ${token}`
   }
 })
   const result = await data.json();
-
-  const key = Object.keys(result) 
-  console.log(result.data)
   result.data.map( d=>{
     tab +=`
     <tr>
@@ -35,7 +31,7 @@ const data = await fetch('http://localhost:3000/api/v1/queries',{
 
 // function for saving data in the firebase databse
 const saveQuery = async(name,email,message) => {
-  const formData = await fetch('http://localhost:3000/api/v1/queries',{
+  const formData = await fetch('https://blog-andela.herokuapp.com/api/v1/queries',{
     method:"post",
     headers:{
       'Content-Type': 'application/json'
