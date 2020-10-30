@@ -1,7 +1,5 @@
 // create article 
-
 const url= 'https://blog-andela.herokuapp.com/api/v1/'
-
 const articleForm = document.getElementById('articleForm');
 const articleView = document.getElementById('articleOne');
 const articleTable = document.getElementById('blog');
