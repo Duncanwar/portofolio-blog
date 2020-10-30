@@ -5,7 +5,7 @@ const authsignin = async (e) => {
     e.preventDefault();
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
-    const postData = await fetch("http://localhost:3000/api/v1/login",{
+    const postData = await fetch("https://blog-andela.herokuapp.com/api/v1/login",{
         method:"post",
         headers:{
           'Content-Type': 'application/json'

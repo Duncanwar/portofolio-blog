@@ -8,7 +8,7 @@ const authsignup = async(e) => {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
-    const signup = await fetch('http://localhost:3000/api/v1/signup',{
+    const signup = await fetch('https://blog-andela.herokuapp.com/api/v1/signup',{
         method:"post",
         headers:{
             'Content-Type':'application/json'
