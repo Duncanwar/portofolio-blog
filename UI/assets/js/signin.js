@@ -18,10 +18,10 @@ const authsignin = async (e) => {
     localStorage.setItem('token', tok)
     localStorage.setItem('role',role)
     if(role === 'admin'){
-     return window.location.replace('http://127.0.0.1:5500/UI/dashboard.html')
+     return window.location.replace('../UI/dashboard.html')
     }
     else{
-      return window.location.replace('http://127.0.0.1:5500/UI/articles.html')
+      return window.location.replace('../UI/articles.html')
     }
 }
 

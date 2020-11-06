@@ -1,6 +1,6 @@
 // create article 
-
-const url= 'https://blog-andela.herokuapp.com/api/v1/'
+// 'http://localhost:3000/api/v1/' || 
+const url=  'https://blog-andela.herokuapp.com/api/v1/' 
 
 const articleForm = document.getElementById('articleForm');
 const articleView = document.getElementById('articleOne');
@@ -64,24 +64,34 @@ const submitForm = async(e) => {
 }
 
 const displayArticleInTableForm = async() => {
-    let tab=`
-    <tr>
-    <th>Title</th>
-    <th>Time</th>
-    </tr>
-    `;
-const data = await fetch(`${url}/articles`);
+//     let tab=`
+//     <tr>
+//     <th>Title</th>
+//     <th>Time</th>
+//     </tr>
+//     `;
+const data = await fetch(`${url}articles`);
 const result = await data.json();
-result.data.map(d => {
-    tab +=`
-    <tr>
-    <td>${d.Title}</td>
-    <td>${d.createdAt}</td>
-    </tr>
+console.log(result.data)
+console.log(Object.keys(result.data[0]))
+const titles = Object.keys(result.data[0])
+
+// result.data.map(d => {
+//     tab +=`
+//     <tr>
+//     <td>${d.Title}</td>
+//     <td>${d.createdAt}</td>
+//     </tr>
    
-  `
-})
-articleTable.innerHTML = tab;
+//   `
+// })
+// articleTable.innerHTML = tab;
+const tr = document.createElement('tr');
+const th = document.createElement('th')
+th.textContent = 'Title'
+th.textContent = 'Title'
+articleTable.appendChild(tr)
+articleTable.appendChild(th)
 }
 // location
 

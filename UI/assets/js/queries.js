@@ -5,10 +5,6 @@ const contactForm = document.getElementById('submitForm');
 // Fetch data from firebase and display them
 const displayQueries = async () => {
 let tab='';
-tab +=`<th>Name</th>
-  <th>message</th>
-  <th>Email</th>
-  `;
 const token = localStorage.getItem('token')
 const data = await fetch('https://blog-andela.herokuapp.com/api/v1/queries',{
   headers:{
