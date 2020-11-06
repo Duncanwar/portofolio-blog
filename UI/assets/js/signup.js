@@ -20,7 +20,7 @@ const authsignup = async(e) => {
         formsignup.innerText = result.error
     }
     else {
-        return window.location.replace('http://127.0.0.1:5500/UI/articles.html')
+        return window.location.replace('../UI/articles.html')
     }
 }
 

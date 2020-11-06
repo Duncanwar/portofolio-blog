@@ -14,14 +14,15 @@ const authsignin = async (e) => {
       })
     const result = await postData.json();
     const tok = result.token;
+    console.log(result)
     const role = result.data.role
     localStorage.setItem('token', tok)
-    localStorage.setItem('role',role)
+    localStorage.setItem('role', role)
     if(role === 'admin'){
      return window.location.replace('http://127.0.0.1:5500/UI/dashboard.html')
     }
     else{
-      return window.location.replace('http://127.0.0.1:5500/UI/articles.html')
+      return window.location.assign('http://127.0.0.1:5500/UI/articles.html')
     }
 }
 
