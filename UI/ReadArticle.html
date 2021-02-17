@@ -21,41 +21,78 @@
 
     </nav>
 <main class='view'>
-<h1>FlexBox</h1>
+<h1>SETUP INTEGRATION TEST IN NODE JS WITH MOCHA</h1>
 <div class="author">
 <img class='author-img' src="./assets/img/Profile.jpg"> 
 <h4>Ndanyuzwe Duncan</h4>
 </div>
-<div >
-    <img class="article-img" src="./assets/img/xps-2L-0vnCnzcU-unsplash.jpg">
+<!-- <div >
+   
     <div class='subscribe'>
         <h6>Subscribe to my article</h6>
         <input type="text" class="subscribe-field"  name='comment' placeholder="email">
         <input type='submit' class='btn-submit' name='subscribe' value="Subscribe">
     </div>
-</div>
+</div> -->
 <div class="content">
     <div class="cont">
-        
-<h5>Intro to flexbox</h5>
 <p>
-    Lorem Ipsum is simply dummy text of the printing and
-     typesetting industry. Lorem Ipsum has been the industry's 
-     standard dummy text ever since the 1500s, when an unknown 
-     printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was poppular
+<br>
+    In this article, I assume that you have already been working with the node js app with a route that you want to state.
+I am using ES6+
+This my file that we are going to test.
+
 </p>
+</br>
+<img class="article-img" src="./assets/img/1.png">
 </div>
-<div class="comment">
+<br>
+<br>
+<p>Before we start writing code for testing, we have to know some libraries that can be used for the integration test in Node js.
+    In Node JS we have man libraries for testing like:<br>
+    - Mocha<br>
+    - Jest<br>
+    -Supertest and other Many more<br>
+   N.B: We are starting. First of all, we have to install test libraries that will help us with the integration test.
+   npm install mocha, chai, chai-http 
+   After installing those package you create a test folder in the root directory, in test folder create file name welcome.test.js
+
+   </p>
+   <br>
+   <img class="article-img" src="./assets/img/2.png">
+   <br>
+   <p>After creating a welcome test file. Now we are going to write a test to test get route at ”/”.Below are the codes </p>
+     <img class="article-img" src="./assets/img/3.png">
+<p>When we write a test, we assume the value and we test to see if the returned value will be equal to the value we assumed before. That is the reason for the word expect. Before we run the test we have to add a test script in package.json so that we can be able to run the test above.
+</p>
+<img class="article-img" src="./assets/img/4.png">
+<p>
+    When we write a test, we assume the value and we test to see if 
+    the returned value will be equal to the value we assumed before. 
+    That is the reason for the word expect.<b></b>
+     Before we run the test we have to add a test script in package.json
+     so that we can be able to run the test above.
+</p>
+<img class="article-img" src="./assets/img/5.png">
+<p>
+
+Thank you for reading this blog about setting an integration test in NodeJs with HTTP route.<br>
+
+For more information about the frameworks, I have used mocha and chai. 
+<!-- You can read their document here mocha and chai.  -->
+</p>
+
+<!-- <div class="comment">
     <input  type="submit" class="comment-field"  name='comment' placeholder="comment" value="ADD COMMENT">
-</div>
-<div class="comments">
+</div> -->
+<!-- <div class="comments">
     <div class="author">
         <img class='author-img' src="./assets/img/Profile.jpg"> 
         <h4>Ndanyuzwe Duncan</h4>
         </div>
         <p>Duncan You nailed it
         </p>
-</div>
+</div> -->
 </div>
 
 </main>

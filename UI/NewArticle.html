@@ -46,7 +46,7 @@ Article
             <input type="text" id="articleTitle" name="title" placeholder="Title" required><br>
             <input type="file" id='articleImg'  name="image" placeholder="image" required><br>
             
-            <textarea type="text" id='articleContent' name="Message" placeholder="Article content" required></textarea><br>
+            <textarea name="textarea" type="text" id='articleContent' name="Message" placeholder="Article content" required></textarea><br>
             <input type="submit" name="Create" value="Create" ><br>
         </form>
     </div>
@@ -58,5 +58,12 @@ Article
             <p> &copy;Ndanyuzwe Duncan Semugeshi 2020 </p>
          </footer>
          <script src="./assets/js/articles.js"></script>
+         <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"
+        integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ=="
+        crossorigin="anonymous"></script>
+         <script>
+             CKEDITOR.replace("textarea")
+         </script>
 </body>
 </html>

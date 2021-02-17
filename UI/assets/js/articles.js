@@ -53,7 +53,6 @@ else {
     // display articles
     
     
-    
     // submit the article form
     const submitForm = async(e) => {
         let alerts = document.querySelector('.alert')
@@ -89,17 +88,33 @@ else {
         <tr>
         <td>${d.Title}</td>
         <td>${new Date(d.createdAt).toDateString()}</td>
-        <td><input type="button" value="delete" onclick="removeArticle(${d._id})"/>
-        </tr>
-       
-      `
+        <td><button value="delete" id=${d._id} onclick="removeArticle(this)">Delete</button></td>
+        </tr>`
     })
     articleTable.innerHTML = tab;
-    
     }
+
     // location
     
+     function removeArticle(id){
+        const is = id.getAttribute('id');
+        const newArticle = fetch(`${url}articles/${is}`,{
+            method:'delete',
+            headers:{
+                'Content-Type':'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+        }).then(article => {
+            article.json()
+        }).then(result => {
+            console.log(result)
+        });
     
+        const article = newArticle.json()
+        console.log(article)
+        console.log("Yego",is);
+    }
+   
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
       }
@@ -121,13 +136,10 @@ else {
     else{
         displayArticle()
     }
-    
-}
-function removeArticle(){
-    console.log("nice")
-}
+ 
 logout.addEventListener('click',()=>{
     localStorage.clear()
     window.location.replace('signin.html')
 })
+}
 //function to save article query
